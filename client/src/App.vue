@@ -1,14 +1,15 @@
 <template>
   <h1 class="left">Driver Knowledge Practice Test</h1>
   <h3 class="left">(52 Questions)</h3>
-  <button v-if="questionsLoaded && !started && !done" v-on:click="start()">Start</button>
+  <button class="left" v-if="questionsLoaded && !started && !done" v-on:click="start()">Start</button>
   <question v-if="started && !done" v-bind:question="questionList[questionNumber]" @correct="increaseScore()" @incorrect="nextQuestion()"/>
   <p v-if="done" class="left">Your got {{correct}} out of {{questionList.length - 1}}</p>
-  <button v-if="started && done" v-on:click="restart()">Try Again</button>
+  <button class="left" v-if="started && done" v-on:click="restart()">Try Again</button>
 </template>
 
 <script>
 import Question from './components/Question.vue'
+const questionsUrl = Vue.config.devtools ? 'http://localhost:82/questions' : 'https://quiz.jonfleming.net/questions';
 
 export default {
   name: 'App',
@@ -40,7 +41,7 @@ export default {
       this.done = false;
     },
     readQuestions() {
-      this.axios.get('https://quiz.jonfleming.net/questions').then(response => {
+      this.axios.get(questionsUrl).then(response => {
         this.questionList = response.data[0]});
     },
     increaseScore() {
