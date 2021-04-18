@@ -9,7 +9,7 @@
 
 <script>
 import Question from './components/Question.vue'
-const questionsUrl = Vue.config.devtools ? 'http://localhost:82/questions' : 'https://quiz.jonfleming.net/questions';
+const questionsUrl = app.config.devtools ? 'http://localhost:82/questions' : 'https://quiz.jonfleming.net/questions';
 
 export default {
   name: 'App',
