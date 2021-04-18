@@ -3,8 +3,10 @@ const parse = require('csv-parse');
 const cors = require('cors');
 const express = require('express');
 const session = require('express-session');
+const serveStatic = require("serve-static")
+const path = require('path');
 
-const port = process.env.PORT || 81;
+const port = process.env.PORT || 82;
 const questions = [];
 const parser = parse({delimiter: '\t'}, function(err, data){
     if (err) {
@@ -14,7 +16,7 @@ const parser = parse({delimiter: '\t'}, function(err, data){
     questions.push(data);
 });
 
-fs.createReadStream(__dirname + '/Questions.txt').pipe(parser)
+fs.createReadStream(path.join(__dirname, 'Questions.txt')).pipe(parser);
 
 const app = express();
 app.use(express.json());
@@ -32,6 +34,7 @@ app.get('/questions', (req, res, next) => {
     console.log('Received request for questions');
 });
 
+app.use(serveStatic(path.join(__dirname, 'client', 'dist')));
 app.listen(port, ()=>{
     console.log(`Listening on port ${port}`);
 });

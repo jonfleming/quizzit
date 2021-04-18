@@ -39,7 +39,7 @@ export default {
       this.done = false;
     },
     readQuestions() {
-      this.axios.get('http://localhost:81/questions').then(response => {
+      this.axios.get('http://localhost:82/questions').then(response => {
         this.questionList = response.data[0]});
     },
     increaseScore() {
