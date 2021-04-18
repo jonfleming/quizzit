@@ -1,0 +1,4 @@
+	Question	Answer 1	Answer 2	Answer 3	Answe 4	Correct
+1	"If a tire suddenly goes flat or blows out, you should NOT"	keep the vehicle going straight.	slowly ease our foot off the gas pedal.	brake hard.	hold the steering wheel tightly.	3
+2	"On some roadways, lanes marked as ""Transit"" are reserved for"	trucks only.	buses only.	high-occupancy vehicles (HOVs) only.	bicycles only.	2
+3	"If an oncoming vehicle has its high-beam headlights on, you should look toward"	the center of the road.	the driver of the oncoming vehicle.	the right edge of the road.	the left edge of the road.	3
