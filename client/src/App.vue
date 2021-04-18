@@ -39,7 +39,7 @@ export default {
       this.done = false;
     },
     readQuestions() {
-      this.axios.get('https://jonfleming.net:82/questions').then(response => {
+      this.axios.get('https://quiz.jonfleming.net/questions').then(response => {
         this.questionList = response.data[0]});
     },
     increaseScore() {
