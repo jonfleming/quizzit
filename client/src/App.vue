@@ -9,7 +9,7 @@
 
 <script>
 import Question from './components/Question.vue'
-const questionsUrl = app.config.devtools ? 'http://localhost:82/questions' : 'https://quiz.jonfleming.net/questions';
+console.log(`process.env.VUE_APP_QUESTION_URL=${process.env.VUE_APP_QUESTION_URL}`);
 
 export default {
   name: 'App',
@@ -20,6 +20,7 @@ export default {
     questionNumber: 0,
     questionList: [],
     done: false,
+    questionsUrl: process.env.VUE_APP_QUESTION_URL || 'https://quiz.jonfleming.net/questions',
     }
   },
   components: {
@@ -41,7 +42,7 @@ export default {
       this.done = false;
     },
     readQuestions() {
-      this.axios.get(questionsUrl).then(response => {
+      this.axios.get(this.questionsUrl).then(response => {
         this.questionList = response.data[0]});
     },
     increaseScore() {
