@@ -1,10 +1,12 @@
 <template>
-  <h1 class="left">Driver Knowledge Practice Test</h1>
-  <h3 class="left">(52 Questions)</h3>
-  <button v-if="questionsLoaded && !started && !done" v-on:click="start()">Start</button>
-  <question v-if="started && !done" v-bind:question="questionList[questionNumber]" @correct="increaseScore()" @incorrect="nextQuestion()"/>
-  <p v-if="done" class="left">Your got {{correct}} out of {{questionList.length - 1}}</p>
-  <button v-if="started && done" v-on:click="restart()">Try Again</button>
+  <div>
+    <h1 class="left">Driver Knowledge Practice Test</h1>
+    <h3 class="left">(52 Questions)</h3>
+    <button class="left" v-if="questionsLoaded && !started && !done" v-on:click="start()">Start</button>
+    <question v-if="started && !done" v-bind:question="questionList[questionNumber]" @correct="increaseScore()" @incorrect="nextQuestion()"/>
+    <p  class="left" v-if="done">Your got {{correct}} out of {{questionList.length - 1}}</p>
+    <button  class="left" v-if="started && done" v-on:click="restart()">Try Again</button>
+  </div>
 </template>
 
 <script>
@@ -75,14 +77,7 @@ export default {
 
 .left {
   text-align: left;
-  align-items: left;
-}
-button {
-  margin-left: -40%;
+  float:left;
   font-size: 24px;
-}
-p {
-  text-align: left;
-  font-size: 32px;
 }
 </style>
