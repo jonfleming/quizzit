@@ -15,12 +15,16 @@ const parser = parse({delimiter: '\t'}, function(err, data){
     console.log(data);
     questions.push(data);
 });
+const corsOptions = {
+    origin: ['https://jonfleming.net', 'https://jonfleming.net:82', 'https://quiz.jonfleming.net', 'http://localhost:82'],
+    optionsSuccessStatus: 200,
+};
 
 fs.createReadStream(path.join(__dirname, 'Questions.txt')).pipe(parser);
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 app.use(session({
     secret: 'qsxtfvbk,',
