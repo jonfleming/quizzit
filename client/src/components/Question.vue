@@ -7,7 +7,7 @@
         <li class="left"><input type="radio" id="3" value="3" v-model="answer">{{question[4]}}</li>
         <li class="left" v-if="question[4].length"><input type="radio" id="4" value="4" v-model="answer">{{question[5]}}</li>
     </ul>
-    <button v-on:click="next()">Next</button>
+    <button class="left" v-on:click="next()">Next</button>
   </div>
 </template>
 

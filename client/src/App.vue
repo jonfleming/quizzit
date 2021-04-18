@@ -76,14 +76,7 @@ export default {
 
 .left {
   text-align: left;
-  align-items: left;
-}
-button {
-  margin-left: -40%;
+  float:left;
   font-size: 24px;
-}
-p {
-  text-align: left;
-  font-size: 32px;
 }
 </style>
