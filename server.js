@@ -16,7 +16,7 @@ const parser = parse({delimiter: '\t'}, function(err, data){
     questions.push(data);
 });
 const corsOptions = {
-    origin: ['https://jonfleming.net', 'https://jonfleming.net:82', 'https://quiz.jonfleming.net', 'http://localhost:82'],
+    origin: ['https://jonfleming.net', 'https://quiz.jonfleming.net', 'http://localhost:82'],
     optionsSuccessStatus: 200,
 };
 
